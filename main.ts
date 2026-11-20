@@ -1,6 +1,5 @@
-let waarde_van_het_kompas = 0
 basic.forever(function () {
-    if (waarde_van_het_kompas > 45 && waarde_van_het_kompas < 135) {
+    if (input.compassHeading() > 45 && input.compassHeading() < 135) {
         basic.showLeds(`
             . . # . .
             . # . . .
@@ -9,15 +8,40 @@ basic.forever(function () {
             . . # . .
             `)
     }
-})
-basic.forever(function () {
-    if (waarde_van_het_kompas < 0 && waarde_van_het_kompas < 0) {
+    if (input.compassHeading() > 135 && input.compassHeading() < 225) {
         basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
-            . . . . .
+            . . # . .
+            . . # . .
+            # . # . #
+            . # # # .
+            . . # . .
+            `)
+    }
+    if (input.compassHeading() > 225 && input.compassHeading() < 315) {
+        basic.showLeds(`
+            . . # . .
+            . . . # .
+            # # # # #
+            . . . # .
+            . . # . .
+            `)
+    }
+    if (input.compassHeading() > 315 && input.compassHeading() < 360) {
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            # . # . #
+            . . # . .
+            . . # . .
+            `)
+    }
+    if (input.compassHeading() > 0 && input.compassHeading() < 45) {
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            # . # . #
+            . . # . .
+            . . # . .
             `)
     }
 })
